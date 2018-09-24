@@ -75,7 +75,7 @@ $Dashboard = {
                 }
             )
             $DataSet = @(
-                New-UdChartDataset -DataProperty "Count" -BackgroundColor Blue -HoverBackgroundColor Yellow
+                New-UdChartDataset -DataProperty "Count"
             )#Dataset array
             Out-UDChartData -LabelProperty "Name"  -Data $Data -Dataset $DataSet
         }#New-UDChart
@@ -111,7 +111,7 @@ $Dashboard = {
                 }
             )
             $DataSet = @(
-                New-UdChartDataset -DataProperty "Count" -BackgroundColor Blue -HoverBackgroundColor Yellow
+                New-UdChartDataset -DataProperty "Count"
             )#Dataset array
             Out-UDChartData -LabelProperty "Name"  -Data $Data -Dataset $DataSet
         }#New-UDChart
@@ -125,7 +125,7 @@ if ($ResultsDashboard) {
 }
 Start-UDDashboard -Content $Dashboard -Port 4242
 ```
-Alright, so the data is meaningful but wow is that ugly. Let's add some color and formatting like:
+Alright, so the data is meaningful but wow is that ugly. Let's add some color and formatting by updating New-UdChartDataset :
 ```powershell
 $Dashboard = {
     New-UDDashboard -Title "Local Service Status" -Content {
@@ -157,4 +157,5 @@ if ($ResultsDashboard) {
 }
 Start-UDDashboard -Content $Dashboard -Port 4242
 ```
-Admittedly, our formatting is comically better. If you have written any sort of webpage before the terms "BorderColor","BorderWidth","BackgroundColor",etc... should all be familiar concepts. Last important note is most of the commands we have seen so far have a "color" parameter set. 
+Admittedly, our formatting is comically better, I wouldn't actually recommend using it unless you are a comic sans kind of person. If you have written any sort of webpage before the terms "BorderColor","BorderWidth","BackgroundColor",etc... should all be familiar concepts. Lastly, this is static output, it runs once. Fortunately, universal dashboard provides a refreh mechanism in the way of -AutoRefresh, or -RefreshInterval where RefreshInterval is specified in seconds.
+
