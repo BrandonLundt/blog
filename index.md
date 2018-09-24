@@ -1,3 +1,3 @@
 # Welcome to the ramblings of a dude on PowerShell.
 
-[Getting started with Universal Dashboard](https://brandonlundt.github.io/blog/UniversalDashboard/index.md)
+[Getting started with Universal Dashboard](UniversalDashboard/index.md)
